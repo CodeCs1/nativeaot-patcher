@@ -78,8 +78,6 @@ internal class RTC : Device
         // Capture current TSC as boot reference
         BootTsc = X64CpuOps.ReadTSC();
 
-        /*
-        Not work for AMD64, will NOT test it in ARM64.
         // Priority 1: EFI Runtime Services GetTime
         //
         if (EfiRtc.TryGetTime(out long efiTicks))
@@ -89,7 +87,7 @@ internal class RTC : Device
             Serial.Write("[RTC] Initialized\n");
             return;
         }
-        */
+        
 
         // Priority 2: Limine boot time
         if (Limine.BootTime.Response != null)
